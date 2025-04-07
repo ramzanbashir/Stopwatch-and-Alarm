@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stopwatch & Alarm</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="https://cdn0.iconfinder.com/data/icons/measure-precision-2/500/vi112_3_stopwatch_cartoon_object_logo_alarm_clock_countdown-512.png">
+</head>
+<body>
+  <h1 id="myH1">Stopwatch & Alarm</h1>
+
+  <div id="container">
+    <button id="toggleStopwatchBtn">Stopwatch</button>
+    <button id="toggleAlarmBtn">Alarm</button>
+
+    <div id="display">00:00:00:00</div>
+
+    <!-- Stopwatch Controls -->
+    <div id="stopwatchControls" style="display: none;">
+      <button id="startBtn" onclick="start()">Start</button>
+      <button id="stopBtn" onclick="stop()">Stop</button>
+      <button id="resetBtn" onclick="reset()">Reset</button>
+    </div>
+
+    <!-- Alarm Controls -->
+    <div id="alarmControls" style="display: none;">
+      <input type="time" id="alarmTime">
+      <button id="alarmBtn" onclick="setAlarm()">Set Alarm</button>
+      <button id="clearAlarmBtn" onclick="clearAlarm()">Clear Alarm</button>
+      <button id="snoozeBtn" onclick="snoozeAlarm()" style="display:none;">Snooze</button>
+
+      <div id="alarmMessage" style="display: none;">
+        Alarm set for <span id="alarmTimeDisplay"></span>
+      </div>
+      <div id="alarmMessage2" style="display:none;">Alarm cleared</div>
+      <div id="alarmMessage3" style="display:none;">Alarm time is not set</div>
+    </div>
+  </div>
+
+  <!-- Azaan Audio -->
+  <audio id="alarmSound" src="https://www.islamcan.com/audio/adhan/azan1.mp3" preload="auto"></audio>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
